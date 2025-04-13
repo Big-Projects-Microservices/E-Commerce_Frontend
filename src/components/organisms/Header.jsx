@@ -12,7 +12,7 @@ export default function Header() {
         justifyContent: "space-between",
         alignItems: "center",
         mt: 2,
-        p: "0 20px 0 20px",
+        p: "0 80px 0 80px",
       }}
     >
       <RideSide />

@@ -13,14 +13,16 @@ export default function Slider() {
       style={{ marginTop: 20 }}
     >
       <SwiperSlide>
-        <img src={slide1} alt="Слайд" style={imageStyle} />
+        <img src={slide1} alt="Slide" style={imageStyle} />
         <div style={textOverlay}>
-          <h2>Super Flash Sale 50% Off</h2>
+          <h2 className="font-custom max-w-full w-full block z-50">
+            <b>Super Flash Sale 50% Off</b>
+          </h2>
         </div>
       </SwiperSlide>
 
       <SwiperSlide>
-        <img src={slide1} alt="Слайд" />
+        <img src={slide1} alt="Slide" />
       </SwiperSlide>
     </Swiper>
   );
@@ -34,9 +36,10 @@ const imageStyle = {
 
 const textOverlay = {
   position: "absolute",
-  top: "50%",
-  left: "50%",
+  fontSize: "65px",
+  maxWidth: "573px",
+  top: "0",
+  left: "0",
   color: "#fff",
-  textAlign: "center",
-  borderRadius: "12px",
+  padding: "258px 0px 0px 100px",
 };
