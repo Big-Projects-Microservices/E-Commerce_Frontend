@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import Profile from "../atoms/Profile";
 import Searcher from "../atoms/Searcher";
 import ShoppingCart from "../atoms/ShoppingCart";
 
-export default function LeftSide() {
+export default function LeftSideHeader() {
   const menuList = [
     { id: 1, name: "Home" },
     { id: 2, name: "Bags" },
@@ -12,7 +13,14 @@ export default function LeftSide() {
   ];
   const navList = [
     { id: 1, name: <Profile /> },
-    { id: 2, name: <ShoppingCart /> },
+    {
+      id: 2,
+      name: (
+        <Link to="/cart">
+          <ShoppingCart />
+        </Link>
+      ),
+    },
     { id: 3, name: "Items" },
     { id: 4, name: "$0.00" },
     { id: 5, name: <Searcher /> },

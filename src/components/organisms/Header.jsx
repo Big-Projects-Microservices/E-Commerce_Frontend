@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import LeftSide from "../molecules/LeftSide";
-import RideSide from "../molecules/RightSide";
+import RideSideHeader from "../molecules/RightSideHeader";
+import LeftSideHeader from "../molecules/LeftSideHeader";
 
 export default function Header() {
   return (
@@ -15,8 +15,8 @@ export default function Header() {
         p: "0 80px 0 80px",
       }}
     >
-      <RideSide />
-      <LeftSide />
+      <RideSideHeader />
+      <LeftSideHeader />
     </Box>
   );
 }
