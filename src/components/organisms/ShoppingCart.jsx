@@ -1,7 +1,7 @@
 import React from "react";
 import CartItem from "../molecules/CartItem";
-import OrderForm from "../molecules/OrderForm";
-import ReedemVoucher from "../molecules/ReedemVoucher";
+import OrderForm from "./OrderForm";
+import ReedemVoucher from "./ReedemVoucher";
 import CartItemDesc from "../atoms/CartItemDesc";
 import { Box } from "@mui/material";
 const demoProducts = [

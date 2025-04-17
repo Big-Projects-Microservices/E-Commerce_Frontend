@@ -5,23 +5,20 @@ const ComponentReminder = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleKeyPress = (e) => {
-    // Проверка на комбинацию Ctrl + Shift + H
     if (e.ctrlKey && e.shiftKey && e.key === "H") {
-      setIsVisible((prev) => !prev); // Переключаем видимость
+      setIsVisible((prev) => !prev);
     }
   };
 
-  // Добавляем обработчик событий при монтировании компонента
   useEffect(() => {
     window.addEventListener("keydown", handleKeyPress);
 
-    // Очистка обработчика при размонтировании компонента
     return () => {
       window.removeEventListener("keydown", handleKeyPress);
     };
   }, []);
 
-  if (!isVisible) return null; // Если напоминалка не видна, не рендерим компонент
+  if (!isVisible) return null;
 
   return (
     <div className="reminder-container">

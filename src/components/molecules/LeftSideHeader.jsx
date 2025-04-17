@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import Profile from "../atoms/Profile";
-import Searcher from "../atoms/Searcher";
-import ShoppingCart from "../atoms/ShoppingCart";
+import { ShoppingCart, Profile, Searcher } from "../atoms";
 
 export default function LeftSideHeader() {
   const menuList = [

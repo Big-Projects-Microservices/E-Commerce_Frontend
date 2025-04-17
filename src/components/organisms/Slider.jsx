@@ -4,6 +4,22 @@ import { Autoplay } from "swiper/modules";
 import slide1 from "../../assets/offer-banner/slide-1.svg";
 
 export default function Slider() {
+  const imageStyle = {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+  };
+
+  const textOverlay = {
+    position: "absolute",
+    fontSize: "65px",
+    maxWidth: "573px",
+    top: "0",
+    left: "0",
+    color: "#fff",
+    padding: "258px 0px 0px 100px",
+  };
+
   return (
     <Swiper
       modules={[Autoplay]}
@@ -27,19 +43,3 @@ export default function Slider() {
     </Swiper>
   );
 }
-
-const imageStyle = {
-  width: "100%",
-  height: "100%",
-  objectFit: "cover",
-};
-
-const textOverlay = {
-  position: "absolute",
-  fontSize: "65px",
-  maxWidth: "573px",
-  top: "0",
-  left: "0",
-  color: "#fff",
-  padding: "258px 0px 0px 100px",
-};

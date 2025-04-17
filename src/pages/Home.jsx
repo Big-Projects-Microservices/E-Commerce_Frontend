@@ -1,5 +1,5 @@
 import Banners from "../components/molecules/Banners";
-import Slider from "../components/molecules/Slider";
+import Slider from "../components/organisms/Slider";
 
 export default function Home() {
   return (
