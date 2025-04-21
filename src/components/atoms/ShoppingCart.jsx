@@ -10,21 +10,24 @@ export default function ShoppingCart() {
         color="error"
         sx={{
           "& .MuiBadge-badge": {
-            right: -22, // Немного отодвигаем значок в правый верхний угол
-            top: -5, // Отодвигаем от верхнего края
+            right: -22,
+            top: -8,
             backgroundColor: "#073A69",
             color: "white",
             fontWeight: "bold",
-            fontSize: "10px", // Немного увеличиваем шрифт
-            width: "auto", // Устанавливаем ширину значка
-            height: "10px", // Устанавливаем высоту значка
-            borderRadius: "50%", // Оставляем круглый значок
-            display: "flex", // Центрируем контент внутри значка
-            justifyContent: "center", // Выравниваем по центру
-            alignItems: "center", // Выравниваем по центру
+            fontSize: "8px",
+            borderRadius: "50%",
+            width: "16px",
+            height: "16px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: 0,
+            minWidth: "unset",
           },
         }}
       />
+
       <Icon src={shoppingCart} />
     </Box>
   );

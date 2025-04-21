@@ -1,20 +1,15 @@
-export default function Input({ placeholder, text }) {
+export default function Input({ width = "", height = "", text, placeholder }) {
   return (
-    <form className="max-w-xs mx-auto font-sans">
-      <div className="flex">
-        <input
-          id="voucher"
-          type="text"
-          placeholder={placeholder}
-          className="flex-1 border border-gray-300 rounded-l px-3 py-2 focus:outline-none"
-        />
-        <button
-          type="button"
-          className="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600"
-        >
-          {text}
-        </button>
-      </div>
-    </form>
+    <div className="flex">
+      <input
+        type="text"
+        placeholder={placeholder}
+        className="border border-gray-300 rounded-l px-4"
+        style={{ width, height }}
+      />
+      <button className="bg-sky-600 text-white px-4 rounded-r text-sm w-32 h-16">
+        {text}
+      </button>
+    </div>
   );
 }
