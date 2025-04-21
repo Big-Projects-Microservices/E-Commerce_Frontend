@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { ShoppingCart, Profile, Searcher } from "../atoms";
-
+import { ShoppingCart, Icon } from "../atoms";
+import iconUser from "../../assets/header/my-profile.svg";
+import searcher from "../../assets/header/search-icon.svg";
 export default function LeftSideHeader() {
   const menuList = [
     { id: 1, name: "Home" },
@@ -10,7 +11,7 @@ export default function LeftSideHeader() {
     { id: 5, name: "Contact" },
   ];
   const navList = [
-    { id: 1, name: <Profile /> },
+    { id: 1, name: <Icon text="My profile" src={iconUser} /> },
     {
       id: 2,
       name: (
@@ -21,7 +22,7 @@ export default function LeftSideHeader() {
     },
     { id: 3, name: "Items" },
     { id: 4, name: "$0.00" },
-    { id: 5, name: <Searcher /> },
+    { id: 5, name: <Icon src={searcher} alt="search" /> },
   ];
 
   return (

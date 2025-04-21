@@ -1,5 +1,6 @@
 import { Badge, Box } from "@mui/material";
 import shoppingCart from "../../assets/header/shopping-cart.svg";
+import Icon from "./Icon";
 
 export default function ShoppingCart() {
   return (
@@ -24,7 +25,7 @@ export default function ShoppingCart() {
           },
         }}
       />
-      <img src={shoppingCart} alt="Shopping Cart" />
+      <Icon src={shoppingCart} />
     </Box>
   );
 }

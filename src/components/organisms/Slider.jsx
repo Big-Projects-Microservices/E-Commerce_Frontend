@@ -2,14 +2,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import slide1 from "../../assets/offer-banner/slide-1.svg";
+import Paragraph from "../atoms/Paragraph";
+import BannerImage from "../atoms/BannerImage";
 
 export default function Slider() {
-  const imageStyle = {
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-  };
-
   const textOverlay = {
     position: "absolute",
     fontSize: "65px",
@@ -29,16 +25,19 @@ export default function Slider() {
       style={{ marginTop: 20 }}
     >
       <SwiperSlide>
-        <img src={slide1} alt="Slide" style={imageStyle} />
+        <BannerImage src={slide1} alt="Slider" />
         <div style={textOverlay}>
-          <h2 className="font-custom max-w-full w-full block z-50">
-            <b>Super Flash Sale 50% Off</b>
-          </h2>
+          <b>
+            <Paragraph
+              text="Super Flash Sale
+50% Off"
+            />
+          </b>
         </div>
       </SwiperSlide>
 
       <SwiperSlide>
-        <img src={slide1} alt="Slide" />
+        <BannerImage src={slide1} alt="Slider" />
       </SwiperSlide>
     </Swiper>
   );
