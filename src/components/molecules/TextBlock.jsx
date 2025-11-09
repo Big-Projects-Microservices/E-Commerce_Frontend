@@ -11,9 +11,12 @@ export default function TextBlock() {
         text="Performance and design. Taken right to the edge"
         className="text-base font-normal opacity-80"
       />
-      <button className="w-fit px-6 py-2 bg-white text-black font-semibold rounded-full mt-2 hover:bg-gray-200 transition">
+      <a
+        className="w-fit px-6 py-2 bg-white text-black font-semibold rounded-full mt-2 hover:bg-gray-200 transition"
+        href="./"
+      >
         Shop Now
-      </button>
+      </a>
     </div>
   );
 }

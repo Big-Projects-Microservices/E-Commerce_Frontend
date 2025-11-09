@@ -3,6 +3,8 @@ import Slider from "../components/organisms/Slider";
 import ActionBanner from "../components/organisms/ActionBanner";
 import InfoFeatues from "../components/organisms/InfoFeatures";
 import SearchBar from "../components/organisms/SearchBar";
+import { LatestNews } from "../components/molecules";
+
 export default function Home() {
   return (
     <>
@@ -11,6 +13,7 @@ export default function Home() {
       <ActionBanner />
       <InfoFeatues />
       <SearchBar />
+      <LatestNews />
     </>
   );
 }
