@@ -4,3 +4,8 @@ export { default as Selector } from "./Selector";
 export { default as ShoppingCart } from "./ShoppingCart";
 export { default as CartItemDesc } from "./CartItemDesc";
 export { default as Paragraph } from "./Paragraph";
+export { default as ProductName } from "./ProductName";
+export { default as SectionTitle } from "./SectionTitle";
+export { default as StarRaitung } from "./StarRaitung";
+export { default as TabButton } from "./TabButton";
+export { default as PriceText } from "./PriceText";

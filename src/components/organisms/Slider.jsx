@@ -22,7 +22,7 @@ export default function Slider() {
       autoplay={{ delay: 3000 }}
       spaceBetween={20}
       slidesPerView={1}
-      style={{ marginTop: 20 }}
+      style={{ marginTop: 20, position: "relative" }}
     >
       <SwiperSlide>
         <BannerImage src={slide1} alt="Slider" />

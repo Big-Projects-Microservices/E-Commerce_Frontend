@@ -10,9 +10,7 @@ export default function Selector() {
   return (
     <Box>
       <select value={selectedOption} onChange={handleChange}>
-        <option value="EN" selected>
-          EN
-        </option>
+        <option value="EN">EN</option>
         <option value="RU">RU</option>
       </select>
 
