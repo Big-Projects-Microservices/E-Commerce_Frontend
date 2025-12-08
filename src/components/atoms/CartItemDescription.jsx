@@ -1,4 +1,4 @@
-export default function CartItemDesc() {
+export default function CartItemDescription() {
   const menuTems = [
     { id: 1, label: "PRODUCT" },
     { id: 2, label: "PRICE" },

@@ -1,4 +1,5 @@
 import { Card, CardMedia } from "@mui/material";
+import { SectionTitle } from "../atoms";
 
 const mockNews = [
   {
@@ -37,16 +38,16 @@ const mockNews = [
 export default function LatestNews() {
   return (
     <section style={{ marginTop: "20px" }}>
-      <ul style={{ display: "flex", flexWrap:'wrap', justifyContent:'center', gap:20 }}>
-      {mockNews.map((news, index) => (
+      <SectionTitle>latest news</SectionTitle>
+      <ul className="flex, flex-wrap, justify-center, gap-2">
+        {mockNews.map((news, index) => (
           <Card
-          key={index}
-            sx={{
+            key={index}
+            className={{
               borderRadius: 2,
               display: "flex",
               padding: 2,
-           
-              boxShadow:'none'
+              boxShadow: "none",
             }}
           >
             <span style={{ display: "flex", textAlign: "right" }}>
@@ -56,7 +57,7 @@ export default function LatestNews() {
               <CardMedia
                 component="img"
                 image={news.image}
-                sx={{ height: 120, width: "100%" }}
+                sx={{ height: "120px", width: "100%", maxWidth: "100px" }}
               />
               <div>
                 <b>
@@ -66,7 +67,7 @@ export default function LatestNews() {
               </div>
             </li>
           </Card>
-      ))}
+        ))}
       </ul>
     </section>
   );

@@ -1,9 +1,7 @@
-
 import CartItem from "../molecules/CartItem";
 import OrderForm from "./OrderForm";
-
 import { Box } from "@mui/material";
-import { CartItemDesc } from "../atoms";
+import { CartItemDescription } from "../atoms";
 import ReedemVoucher from "./ReedemVoucher";
 const demoProducts = [
   {
@@ -26,7 +24,7 @@ const demoProducts = [
 export default function ShoppingCart() {
   return (
     <div className="max-w-4xl mx-auto p-4 justify-between ">
-      <CartItemDesc />
+      <CartItemDescription />
       {demoProducts.map((item) => (
         <CartItem key={item.id} product={item} />
       ))}

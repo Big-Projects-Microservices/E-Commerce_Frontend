@@ -1,6 +1,5 @@
 import { PriceText, ProductName, StarRaitung } from "../atoms";
 
-
 export default function ProductCard({ product, isHot = false }) {
   return (
     <div
@@ -38,7 +37,6 @@ export default function ProductCard({ product, isHot = false }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          
         }}
       >
         {product.imageUrl ? (
@@ -52,13 +50,10 @@ export default function ProductCard({ product, isHot = false }) {
         )}
       </div>
 
-      <ProductName name={product.name}/>
+      <ProductName name={product.name} />
       <StarRaitung rating={product.rating} />
-      <PriceText
-        current={product.price}
-        discount={product.discount_price}
-      />
+      <PriceText current={product.price} discount={product.discount_price} />
       <p>{product.size}</p>
-      </div>
+    </div>
   );
 }

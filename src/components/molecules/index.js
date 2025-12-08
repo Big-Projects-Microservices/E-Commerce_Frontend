@@ -5,3 +5,8 @@ export { default as RightSideHeader } from "./RightSideHeader";
 export { default as LatestNews } from "./LatestNews";
 export { default as ProductCard } from "./ProductCard";
 export { default as TabBar } from "./TabBar";
+export { default as ContactBlock } from "./ContactBlock";
+export { default as CopyrightBlock } from "./CopyRightBlock";
+export { default as LogoBlock } from "./LogoBlock";
+export { default as SocialBlock } from "./SocialBlock";
+export { default as NavList } from "./NavList";

@@ -9,7 +9,7 @@ export default function SectionTitle({ children }) {
         color: "#333",
       }}
     >
-      {children}
+      {children.toUpperCase()}
     </h2>
   );
 }

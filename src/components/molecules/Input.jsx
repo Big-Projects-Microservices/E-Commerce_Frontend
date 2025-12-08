@@ -1,6 +1,6 @@
 export default function Input({ width = "", height = "", text, placeholder }) {
   return (
-    <div className="flex">
+    <div className="flex, p-6">
       <input
         type="text"
         placeholder={placeholder}

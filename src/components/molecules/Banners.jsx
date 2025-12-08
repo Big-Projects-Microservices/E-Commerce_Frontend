@@ -1,8 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import "swiper/css";
 
-const products = [
-];
+const products = [];
 
 export default function Banners() {
   return (
