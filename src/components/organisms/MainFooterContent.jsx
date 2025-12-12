@@ -34,7 +34,6 @@ export default function MainFooterContent() {
         <NavList title="My Account" links={navigationLinks} className="!mb-0" />
       </div>
 
-      {/* 5. Our Offers */}
       <NavList
         title="Our Offers"
         links={navigationLinks}

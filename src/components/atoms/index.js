@@ -12,3 +12,4 @@ export { default as PriceText } from "./PriceText";
 export { default as Link } from "./Link";
 export { default as Heading } from "./Heading";
 export { default as Separator } from "./Separator";
+export { default as Button } from "./Button";

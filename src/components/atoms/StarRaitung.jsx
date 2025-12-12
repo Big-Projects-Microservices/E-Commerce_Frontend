@@ -1,14 +1,20 @@
 export default function StarRating({ rating }) {
   const stars = [];
+  const colorActive = "text-yellow-400";
+  const colorInactive = "text-gray-300";
+
   for (let i = 0; i < 5; i++) {
+    const isFilled = i < rating;
+
     stars.push(
       <span
         key={i}
-        style={{ color: i < rating ? "#ffc107" : "#e4e5e9", fontSize: "14px" }}
+        className={`text-sm ${isFilled ? colorActive : colorInactive}`}
       >
         ★
       </span>,
     );
   }
-  return <div style={{ marginBottom: "5px" }}>{stars}</div>;
+
+  return <div className="mb-1">{stars}</div>;
 }

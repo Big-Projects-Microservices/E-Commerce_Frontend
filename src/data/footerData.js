@@ -5,11 +5,7 @@ export const navigationLinks = [
   { text: "Terms & Conditions", url: "#" },
 ];
 
-export const socialIcons = [
-  { label: "F" }, // Facebook
-  { label: "T" }, // Twitter
-  { label: "I" }, // Instagram
-];
+export const socialIcons = [{ label: "F" }, { label: "T" }, { label: "I" }];
 
 export const contactLines = [
   "E-Comm, 4578 Digital St.",

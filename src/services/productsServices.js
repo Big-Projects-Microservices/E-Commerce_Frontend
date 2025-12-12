@@ -1,7 +1,5 @@
 const HASURA_URL = import.meta.env.VITE_HASURA_URL;
 const HASURA_SECRET = import.meta.env.VITE_HASURA_ADMIN_SECRET;
-console.log(HASURA_URL);
-console.log(HASURA_SECRET);
 
 export async function getAllProducts() {
   const query = `

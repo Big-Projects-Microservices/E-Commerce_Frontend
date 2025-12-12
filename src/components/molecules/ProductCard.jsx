@@ -1,59 +1,66 @@
-import { PriceText, ProductName, StarRaitung } from "../atoms";
+import { useSetRecoilState } from "recoil";
+import { shoppingCart } from "../../recoil/atoms/shoppingCart";
+import { Button, PriceText, ProductName, StarRaitung } from "../atoms";
 
 export default function ProductCard({ product, isHot = false }) {
+  const setCart = useSetRecoilState(shoppingCart);
+
+  const handleAddToCart = () => {
+    const itemToAdd = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      quantity: 1,
+    };
+
+    setCart((prevCart) => {
+      const existingItemIndex = prevCart.findIndex(
+        (item) => item.id === itemToAdd.id,
+      );
+
+      if (existingItemIndex > -1) {
+        const newCart = [...prevCart];
+        newCart[existingItemIndex] = {
+          ...newCart[existingItemIndex],
+          quantity: newCart[existingItemIndex].quantity + 1,
+        };
+        return newCart;
+      }
+      return [...prevCart, itemToAdd];
+    });
+  };
+
   return (
-    <div
-      style={{
-        position: "relative",
-        border: "1px solid #eee",
-        borderRadius: "5px",
-        textAlign: "center",
-        width: "298px",
-        margin: "10px",
-      }}
-    >
+    <div className="relative border border-gray-200 rounded-md text-center w-[298px] m-2.5 shadow-md overflow-hidden">
       {isHot && (
-        <span
-          style={{
-            position: "absolute",
-            top: "0",
-            left: "0",
-            backgroundColor: "#f8d7da",
-            color: "red",
-            padding: "5px 10px",
-            fontSize: "12px",
-            fontWeight: "bold",
-            borderRadius: "5px 0 5px 0",
-          }}
-        >
+        <span className="absolute top-0 left-0 bg-red-100 text-red-600 px-2.5 py-1.5 text-xs font-bold rounded-tl-md rounded-br-md z-10">
           HOT
         </span>
       )}
 
-      <div
-        style={{
-          height: "301px",
-          backgroundColor: "#f9f9f9",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <div className="h-[301px] bg-gray-50 flex items-center justify-center p-4">
         {product.imageUrl ? (
           <img
             src={product.imageUrl}
             alt={product.name}
-            style={{ maxWidth: "100%", maxHeight: "100%" }}
+            className="max-w-full max-h-full object-contain"
           />
         ) : (
           "[Image Placeholder]"
         )}
       </div>
-
-      <ProductName name={product.name} />
-      <StarRaitung rating={product.rating} />
-      <PriceText current={product.price} discount={product.discount_price} />
-      <p>{product.size}</p>
+      <div className="p-3">
+        <Button
+          initialText="Add to Basket"
+          clickedText="Added to Basket"
+          onClick={handleAddToCart}
+        />
+        <ProductName name={product.name} />
+        <StarRaitung rating={product.rating} />
+        <PriceText current={product.price} discount={product.discount_price} />
+        <p className="text-sm text-gray-500 mt-1">{product.size}</p>
+      </div>
     </div>
   );
 }
