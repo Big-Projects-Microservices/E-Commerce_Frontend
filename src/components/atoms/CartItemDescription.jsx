@@ -1,9 +1,9 @@
 export default function CartItemDescription() {
   const menuTems = [
     { id: 1, label: "PRODUCT" },
-    { id: 2, label: "PRICE" },
+    { id: 2, label: "UNIT PRICE" },
     { id: 3, label: "QTY" },
-    { id: 4, label: "UNIT PRICE" },
+    { id: 4, label: "PRICE" },
   ];
   return (
     <div className="flex justify-between text-sm text-gray-500 border-b pb-2 mt-10">

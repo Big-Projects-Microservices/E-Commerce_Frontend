@@ -7,6 +7,7 @@ export default function ReedemVoucher() {
       height="64px"
       text="Reedem"
       placeholder="Voucher Code"
+      name="input"
     />
   );
 }

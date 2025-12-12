@@ -1,14 +1,14 @@
-import { Heading, Paragraph } from "../atoms";
+import { Heading, Link } from "../atoms";
 
-export default function ContactBlock({ title, lines }) {
+export default function ContactBlock({ title }) {
   return (
     <div>
       <Heading text={title} />
-      {lines.map((line, index) => (
-        <Paragraph key={index} className="text-sm m-0 leading-normal">
-          {line}
-        </Paragraph>
-      ))}
+      <div className='flex flex-col'>
+        <Link text="E-Comm , 4578 "></Link>
+        <Link text="Marmora Road,"></Link>
+        <Link text="Glasgow D04 89GR"></Link>
+        </div>
     </div>
   );
 }

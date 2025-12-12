@@ -1,10 +1,10 @@
-import { Link, Paragraph } from "../atoms";
+import { Paragraph, PaymentIcons } from "../atoms";
 
-export default function CopyrightBlock({ year, themeAuthor }) {
+export default function CopyrightBlock() {
   return (
-    <Paragraph className="text-xs m-0 leading-relaxed">
-      &copy; {year} Ecommerce theme by{" "}
-      <Link text={themeAuthor} url="#" className="text-xs" />
-    </Paragraph>
+    <>
+    <Paragraph className="text-xs m-0 leading-relaxed" text="© 2018 Ecommerce theme by www.bisenbaev.com"  />
+    <PaymentIcons/>
+    </>
   );
 }

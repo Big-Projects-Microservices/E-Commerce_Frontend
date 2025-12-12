@@ -1,8 +1,15 @@
-export default function Input({ width = "", height = "", text, placeholder }) {
+export default function Input({
+  width = "",
+  height = "",
+  text,
+  placeholder,
+  name,
+}) {
   return (
     <div className="flex, p-6">
       <input
         type="text"
+        name={name}
         placeholder={placeholder}
         className="border border-gray-300 rounded-l px-4"
         style={{ width, height }}

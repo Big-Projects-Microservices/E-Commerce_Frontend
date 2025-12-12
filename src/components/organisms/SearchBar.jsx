@@ -7,6 +7,7 @@ export default function SearchBar() {
         width="635px"
         height="64px"
         text="Search"
+        name="input"
         placeholder="Search query..."
       />
     </div>

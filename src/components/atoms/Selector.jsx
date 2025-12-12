@@ -9,12 +9,12 @@ export default function Selector() {
 
   return (
     <Box>
-      <select value={selectedOption} onChange={handleChange}>
+      <select name="select" value={selectedOption} onChange={handleChange}>
         <option value="EN">EN</option>
         <option value="RU">RU</option>
       </select>
 
-      <select value={selectedOption} onChange={handleChange}>
+      <select name="select" value={selectedOption} onChange={handleChange}>
         <option value="USD">USD</option>
         <option value="EUR">EUR</option>
       </select>

@@ -37,33 +37,34 @@ const mockNews = [
 ];
 export default function LatestNews() {
   return (
-    <section style={{ marginTop: "20px" }}>
+    <section className='mt-6 '>
       <SectionTitle>latest news</SectionTitle>
-      <ul className="flex, flex-wrap, justify-center, gap-2">
+      <ul className="flex flex-wrap justify-center gap-2">
         {mockNews.map((news, index) => (
           <Card
             key={index}
-            className={{
+            sx={{
               borderRadius: 2,
               display: "flex",
               padding: 2,
               boxShadow: "none",
+              cursor:'pointer',
             }}
           >
             <span style={{ display: "flex", textAlign: "right" }}>
               {news.time}
             </span>
-            <li style={{ display: "flex" }}>
+            <li className='flex'>
               <CardMedia
                 component="img"
                 image={news.image}
                 sx={{ height: "120px", width: "100%", maxWidth: "100px" }}
               />
-              <div>
+              <div className='m-3'>
                 <b>
                   <p>{news.name}</p>
                 </b>
-                <p style={{ maxWidth: "300px" }}>{news.artical}</p>
+                <p className='max-w-80'>{news.artical}</p>
               </div>
             </li>
           </Card>
