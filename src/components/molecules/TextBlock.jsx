@@ -1,4 +1,4 @@
-import Paragraph from "../atoms/Paragraph";
+import { Paragraph } from "@atoms";
 
 export default function TextBlock() {
   return (

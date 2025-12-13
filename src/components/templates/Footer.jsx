@@ -1,5 +1,5 @@
-import { Separator } from "../atoms";
-import { BottomBar, MainFooterContent } from "../organisms";
+import { Separator } from "@atoms";
+import { BottomBar, MainFooterContent } from "@organisms";
 
 export default function Footer() {
   const footerClasses = `

@@ -1,5 +1,5 @@
-import { Icon } from "../atoms";
-import FeatureCard from "../molecules/FeaturedCard";
+import { Icon } from "@atoms";
+import { FeatureCard } from "@molecules";
 import refund from "../../assets/info-features/refund.svg";
 import shipping from "../../assets/info-features/shipping.svg";
 import support from "../../assets/info-features/support.svg";

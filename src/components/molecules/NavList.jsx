@@ -1,4 +1,4 @@
-import { Heading, Link } from "../atoms";
+import { Heading, Link } from "@atoms";
 
 export default function NavList({ title, links, className = "" }) {
   return (

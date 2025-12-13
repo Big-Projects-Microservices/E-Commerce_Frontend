@@ -1,7 +1,7 @@
 import { Badge, Box } from "@mui/material";
 import shoppingCart from "../../assets/header/shopping-cart.svg";
 import Icon from "./Icon";
-import { totalCount } from "../../recoil/selectors/totalCount";
+import { totalCount } from "@recoil/selectors/totalCount";
 import { useRecoilValue } from "recoil";
 
 export default function ShoppingCart() {
@@ -9,7 +9,6 @@ export default function ShoppingCart() {
   return (
     <Box sx={{ display: "flex", alignItems: "center" }}>
       <Badge
-        badgeContent={totalBadgeCount}
         badgeContent={totalBadgeCount}
         color="error"
         sx={{

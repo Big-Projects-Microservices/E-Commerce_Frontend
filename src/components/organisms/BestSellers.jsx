@@ -1,5 +1,5 @@
-import { SectionTitle } from "../atoms";
-import { TabBar } from "../molecules";
+import { SectionTitle } from "@atoms";
+import { TabBar } from "@molecules";
 import ProductGrid from "./ProductGrid";
 
 export default function BestSellers({

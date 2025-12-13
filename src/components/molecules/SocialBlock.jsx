@@ -1,10 +1,10 @@
-import {Heading, Paragraph } from "../atoms";
+import { Heading, Paragraph } from "@atoms";
 
-export default function SocialBlock({ text,  title }) {
+export default function SocialBlock({ text, title }) {
   return (
     <div>
       <Heading text={title} />
-      <Paragraph text={text}/>
+      <Paragraph text={text} />
     </div>
   );
 }

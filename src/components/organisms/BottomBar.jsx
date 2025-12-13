@@ -1,5 +1,4 @@
-
-import { CopyrightBlock } from "../molecules";
+import { CopyrightBlock } from "@molecules";
 
 export default function BottomBar() {
   return (

@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
-import Selector from "../atoms/Selector";
-import Logo from "../atoms/Logo";
+import { Logo, Selector } from "@atoms";
 import { Link } from "react-router-dom";
 
 export default function RightSideHeader() {

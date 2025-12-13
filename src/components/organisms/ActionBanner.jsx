@@ -1,6 +1,6 @@
-import TextBlock from "../molecules/TextBlock";
+import { TextBlock } from "@molecules";
 import shoeImage from "../../assets/action-banner/shoe-image.svg";
-import BannerImage from "../atoms/BannerImage";
+import { BannerImage } from "@atoms";
 
 export default function ActionBanner() {
   return (

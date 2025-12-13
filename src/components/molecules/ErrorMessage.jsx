@@ -1,4 +1,4 @@
-import { Heading, Paragraph } from "../atoms";
+import { Heading, Paragraph } from "@atoms";
 
 export default function ErrorMessage({ code, title, description }) {
   return (

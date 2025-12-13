@@ -1,4 +1,4 @@
-import { TabButton } from "../atoms";
+import { TabButton } from "@atoms";
 
 export default function TabBar({ categories, activeCategory }) {
   return (

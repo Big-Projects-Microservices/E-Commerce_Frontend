@@ -14,7 +14,7 @@ export default function Button({
   const isDisabled = externalDisabled || isTemporarilyDisabled;
 
   const baseClasses =
-    "font-semibold text-xl rounded-md border-none h-[58px] transition-all duration-300 px-6 w-full flex items-center justify-center relative top-[20px]";
+    "font-semibold text-xl border-none h-[58px] transition-all duration-300 px-6 w-full flex items-center justify-center relative top-[80px] rounded-lg max-w-60";
 
   const stateClasses = isDisabled
     ? "text-[#282828] bg-white border border-[#282828] cursor-default opacity-75"

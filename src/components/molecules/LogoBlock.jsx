@@ -1,4 +1,4 @@
-import { Icon, Paragraph } from "../atoms";
+import { Icon, Paragraph } from "@atoms";
 
 export default function LogoBlock({ name, description }) {
   return (

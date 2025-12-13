@@ -2,8 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import slide1 from "../../assets/offer-banner/slide-1.svg";
-import Paragraph from "../atoms/Paragraph";
-import BannerImage from "../atoms/BannerImage";
+import { Paragraph, BannerImage } from "@atoms";
 
 export default function Slider() {
   const textOverlay = {

@@ -1,9 +1,9 @@
-import CartItem from "../molecules/CartItem";
+import { CartItem } from "@molecules";
 import OrderForm from "./OrderForm";
 import { Box } from "@mui/material";
-import { CartItemDescription, Paragraph } from "../atoms";
+import { CartItemDescription, Paragraph } from "@atoms";
 import ReedemVoucher from "./ReedemVoucher";
-import { shoppingCart } from "../../recoil/atoms/shoppingCart";
+import { shoppingCart } from "@recoil/atoms/shoppingCart";
 import { useRecoilValue } from "recoil";
 export default function ShoppingCart() {
   const cartItem = useRecoilValue(shoppingCart);

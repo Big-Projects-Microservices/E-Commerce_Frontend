@@ -6,7 +6,7 @@ export default function Input({
   name,
 }) {
   return (
-    <div className="flex, p-6">
+    <div className="flex p-6">
       <input
         type="text"
         name={name}
@@ -14,7 +14,7 @@ export default function Input({
         className="border border-gray-300 rounded-l px-4"
         style={{ width, height }}
       />
-      <button className="bg-sky-600 text-white px-4 rounded-r text-sm w-32 h-16">
+      <button className="bg-sky-600 text-white px-4 rounded-r text-[20px] w-32 h-16">
         {text}
       </button>
     </div>

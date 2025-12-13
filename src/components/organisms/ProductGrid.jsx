@@ -1,4 +1,4 @@
-import { ProductCard } from "../molecules";
+import { ProductCard } from "@molecules";
 
 export default function ProductGrid({ products }) {
   return (

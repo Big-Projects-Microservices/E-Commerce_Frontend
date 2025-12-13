@@ -1,4 +1,4 @@
-import Input from "../molecules/Input";
+import { Input } from "@molecules";
 
 export default function SearchBar() {
   return (

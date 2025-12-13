@@ -1,5 +1,5 @@
 import BestSellers from "./BestSellers";
-import { getAllProducts } from "../../services/productsServices";
+import { getAllProducts } from "@services/productsServices";
 import { useEffect, useState } from "react";
 export default function BestSellerBlock() {
   const [products, setProducts] = useState([]);

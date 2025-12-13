@@ -14,3 +14,5 @@ export { default as Heading } from "./Heading";
 export { default as Separator } from "./Separator";
 export { default as Button } from "./Button";
 export { default as PaymentIcons } from "./PaymentIncons";
+export { default as BannerImage } from "./BannerImage";
+export { default as HeaderDropDownLink } from "./HeaderDropDownLink";

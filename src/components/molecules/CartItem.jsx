@@ -1,4 +1,4 @@
-import { useShoppingCartActions } from "../../recoil/hooks/useShoppingCartActions";
+import { useShoppingCartActions } from "@recoil/hooks/useShoppingCartActions";
 
 export default function CartItem({ product }) {
   const { decreaseQuantity, increaseQuantity, deleteItem, updateQuantity } =

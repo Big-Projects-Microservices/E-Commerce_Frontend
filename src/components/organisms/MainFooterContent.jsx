@@ -1,22 +1,21 @@
-import { ContactBlock, LogoBlock, NavList, SocialBlock } from "../molecules";
-import {
-  navigationLinks,
-  contactLines,
-} from "../../data/footerData";
+import { ContactBlock, LogoBlock, NavList, SocialBlock } from "@molecules";
+import { navigationLinks, contactLines } from "../../data/footerData";
 export default function MainFooterContent() {
-    
-    return (
-      <>
+  return (
+    <>
       <div className="grid grid-cols-2 md:grid-cols-5 gap-y-10 md:gap-x-8 lg:gap-x-10">
         <div className="col-span-2 md:col-span-1">
           <LogoBlock name="E-Comm" description="" />
         </div>
 
         <div className="col-span-2 md:col-span-1">
-          <SocialBlock  title="Follow us" text="Since the 1500s, when an unknown printer took a galley of type and scrambled."/>
+          <SocialBlock
+            title="Follow us"
+            text="Since the 1500s, when an unknown printer took a galley of type and scrambled."
+          />
 
           <div className="mt-8">
-            <ContactBlock title="Contact Us" lines={contactLines}  />
+            <ContactBlock title="Contact Us" lines={contactLines} />
           </div>
         </div>
 
