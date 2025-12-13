@@ -1,10 +1,9 @@
-import ShoppingCart from "../components/organisms/ShoppingCart";
-import Footer from "../components/templates/Footer";
+import { ShoppingCart } from "@organisms";
 
 export default function CheckOut() {
   return (
     <>
-      <ShoppingCart /> <Footer />{" "}
+      <ShoppingCart />
     </>
   );
 }

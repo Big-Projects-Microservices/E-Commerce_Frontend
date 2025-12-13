@@ -1,8 +1,10 @@
+import { useRecoilValue } from 'recoil';
+import {totalPrice} from '@recoil/selectors/totalPrice'
 export default function OrderForm() {
-  const subtotal = 998;
+  const subTotal = useRecoilValue(totalPrice)
   const shippingFee = 20;
   const coupon = "No";
-  const total = 118;
+  const total = subTotal + shippingFee;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,7 +17,8 @@ export default function OrderForm() {
     >
       <div className="flex justify-between">
         <label htmlFor="subtotal">Subtotal</label>
-        <span id="subtotal">${subtotal}</span>
+        <span id="subtotal"> ${subTotal}</span>
+        {console.log(subTotal)}
       </div>
 
       <div className="flex justify-between">
@@ -39,7 +42,7 @@ export default function OrderForm() {
 
       <button
         type="submit"
-        className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition"
+        className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition text-[20px]"
       >
         Check out
       </button>

@@ -27,10 +27,7 @@ export default function Slider() {
         <BannerImage src={slide1} alt="Slider" />
         <div style={textOverlay}>
           <b>
-            <Paragraph
-              text="Super Flash Sale
-50% Off"
-            />
+            <Paragraph text="Super Flash Sale 50% Off" />
           </b>
         </div>
       </SwiperSlide>

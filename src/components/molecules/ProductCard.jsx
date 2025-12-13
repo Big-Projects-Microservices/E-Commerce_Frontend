@@ -43,7 +43,7 @@ export default function ProductCard({ product, isHot = false }) {
   "
     >
       {isHot && (
-        <span className="absolute top-0 left-0 bg-red-100 text-red-600 px-2.5 py-1.5 text-xs font-bold rounded-tl-md rounded-br-md z-10">
+        <span className="absolute top-0 left-0 bg-red-100 text-red-600 py-1.5 text-xs font-bold rounded-tl-md rounded-br-md z-10 w-[64px] h-[33px]">
           HOT
         </span>
       )}

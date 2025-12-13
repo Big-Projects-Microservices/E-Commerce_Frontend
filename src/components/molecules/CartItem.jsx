@@ -1,8 +1,7 @@
 import { useShoppingCartActions } from "@recoil/hooks/useShoppingCartActions";
 
 export default function CartItem({ product }) {
-  const { decreaseQuantity, increaseQuantity, deleteItem, updateQuantity } =
-    useShoppingCartActions();
+  const { decreaseQuantity, increaseQuantity, deleteItem, updateQuantity } = useShoppingCartActions();
   return (
     <div className="flex items-center justify-between border-b py-4">
       <button
@@ -39,7 +38,8 @@ export default function CartItem({ product }) {
          text-xl font-semibold leading-[26px] text-center 
          outline-none"
           type="text"
-          value={product.count}
+          min="1"
+          value={product.quantity}
           onChange={(e) => updateQuantity(product.id, Number(e.target.value))}
         />
         <button
