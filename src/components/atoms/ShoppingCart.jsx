@@ -10,6 +10,7 @@ export default function ShoppingCart() {
     <Box sx={{ display: "flex", alignItems: "center" }}>
       <Badge
         badgeContent={totalBadgeCount}
+        badgeContent={totalBadgeCount}
         color="error"
         sx={{
           "& .MuiBadge-badge": {
