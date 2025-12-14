@@ -2,7 +2,6 @@ import js from "@eslint/js";
 import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
-import pluginImport from "eslint-plugin-import";
 
 export default [
   { ignores: ["dist"] },
@@ -20,8 +19,6 @@ export default [
     plugins: {
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
-      // --- НОВЫЙ ПЛАГИН ---
-      import: pluginImport,
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -31,33 +28,6 @@ export default [
         "warn",
         { allowConstantExport: true },
       ],
-      // ОПЦИОНАЛЬНО: Правила для предотвращения проблем с импортами
-      "import/no-unresolved": "error",
-      "import/named": "error",
-      "import/default": "error",
-      "import/namespace": "error",
-    },
-    // --- НОВАЯ СЕКЦИЯ: НАСТРОЙКА РАЗРЕШЕНИЯ АЛИАСОВ ---
-    settings: {
-      "import/resolver": {
-        alias: {
-          // Скопируйте те же алиасы, что и в vite.config.js,
-          // но с указанием папки 'src' относительно корня проекта.
-          map: [
-            ["@atoms", "./src/components/atoms"],
-            ["@molecules", "./src/components/molecules"],
-            ["@organisms", "./src/components/organisms"],
-            ["@templates", "./src/components/templates"],
-            ["@pages", "./src/pages"],
-            ["@recoil", "./src/recoil"],
-            ["@services", "./src/services"],
-            ["@styles", "./src/styles"],
-            ["@data", "./src/data"],
-            ["@src", "./src"],
-          ],
-          extensions: [".js", ".jsx"],
-        },
-      },
     },
   },
 ];

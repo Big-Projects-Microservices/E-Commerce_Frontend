@@ -5,7 +5,7 @@ import searcher from "../../assets/header/search-icon.svg";
 
 export default function LeftSideHeader() {
   const menuList = [
-    { id: 1, name: "Home", path: "/" }, // Добавляем путь
+    { id: 1, name: "Home", path: "/" },
     { id: 2, name: "Bags", path: "/bags" },
     { id: 3, name: "Sneakers", path: "/sneakers" },
     { id: 4, name: "Belt", path: "/belt" },
@@ -29,18 +29,15 @@ export default function LeftSideHeader() {
 
   return (
     <div className="flex-none">
-      {/* Верхний ряд навигации (Иконки и корзина) */}
       <ul className="flex space-x-4 gap-1 justify-end">
         {navList.map((item) => (
           <li key={item.id}>{item.name}</li>
         ))}
       </ul>
 
-      {/* Нижний ряд навигации (Основное меню) */}
       <ul className="flex space-x-4 gap-10 mt-4">
         {menuList.map((item) => (
           <li className="font-custom uppercase" key={item.id}>
-            {/* ИСПРАВЛЕНО: Добавлен компонент <Link> */}
             <Link
               to={item.path}
               className="hover:text-gray-500 transition duration-150"

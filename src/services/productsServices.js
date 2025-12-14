@@ -1,7 +1,6 @@
-const HASURA_URL = import.meta.env.VITE_HASURA_URL;
-const HASURA_SECRET = import.meta.env.VITE_HASURA_ADMIN_SECRET;
+import  {graphqlClient}  from "./graphqlClient";
 
-export async function getAllProducts() {
+export const getAllProducts = async () => {
   const query = `
     query {
       products {
@@ -19,26 +18,6 @@ export async function getAllProducts() {
     }
   `;
 
-  const response = await fetch(HASURA_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-hasura-admin-secret": HASURA_SECRET,
-    },
-    body: JSON.stringify({ query }),
-  });
-
-  if (!response.ok) {
-    throw new Error(`Network error: ${response.status}`);
-  }
-
-  const json = await response.json();
-  console.log("Hasura response:", json);
-
-  if (json.errors) {
-    console.error("GraphQL errors:", json.errors);
-    throw new Error("GraphQL query failed");
-  }
-
-  return json.data.products;
-}
+  const data = await graphqlClient(query);
+  return data.products;
+};

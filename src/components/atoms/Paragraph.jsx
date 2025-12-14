@@ -1,6 +1,6 @@
-export default function Paragraph({ text, className = "" }) {
+export default function Paragraph({ text, key, className = "" }) {
   return (
-    <p className={`font-custom max-w-full w-full block z-50 ${className}`}>
+    <p key={key} className={`font-custom max-w-full block z-50 ${className}`}>
       {text}
     </p>
   );

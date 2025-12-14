@@ -3,15 +3,34 @@ import { HeaderCategoryDropDownColumn } from "@molecules";
 
 const categoryData = [
   {
-    title: "Category",
-    items: ["Coporate Shoes", "Sneakers", "Sandals", "Sport Shoe", "Trainers"],
+    title: "Hot Deal",
+    items: [
+      { label: "Coporate Shoes" },
+      { label: "Sneakers" },
+      { label: "Sandals" },
+      { label: "Sport Shoe" },
+      { label: "Trainers" },
+    ],
   },
   {
-    items: ["HOT DEAL", "Sunglasses", "Belts", "Handbags", "Sneakers"],
+    title: "Brands",
+    items: [
+      { label: "HOT DEAL", href: "/hot-deal" },
+      { label: "Sunglasses" },
+      { label: "Belts" },
+      { label: "Handbags" },
+      { label: "Sneakers" },
+    ],
   },
   {
-    title: "Category",
-    items: ["HOT DEAL", "Sunglasses", "Belts", "Handbags", "Sneakers"],
+    title: "Popular",
+    items: [
+      { label: "HOT DEAL", href: "/hot-deal" },
+      { label: "Sunglasses" },
+      { label: "Belts" },
+      { label: "Handbags" },
+      { label: "Sneakers" },
+    ],
   },
 ];
 
@@ -20,13 +39,12 @@ export default function HeaderCategoryGridDropDownColumn() {
     <Box
       sx={{
         py: 4,
-        px: { xs: 2, md: 4 },
         bgcolor: "background.default",
       }}
     >
       <Grid container spacing={2} justifyContent="space-evenly">
         {categoryData.map((column, index) => (
-          <Grid item xs={6} sm={4} md={2} key={index}>
+          <Grid item xs={6} md={2} key={index}>
             <HeaderCategoryDropDownColumn
               title={column.title}
               categories={column.items}

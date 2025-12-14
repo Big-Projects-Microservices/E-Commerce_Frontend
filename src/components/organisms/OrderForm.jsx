@@ -1,7 +1,7 @@
-import { useRecoilValue } from 'recoil';
-import {totalPrice} from '@recoil/selectors/totalPrice'
+import { useRecoilValue } from "recoil";
+import { totalPrice } from "@recoil/selectors/totalPrice";
 export default function OrderForm() {
-  const subTotal = useRecoilValue(totalPrice)
+  const subTotal = useRecoilValue(totalPrice);
   const shippingFee = 20;
   const coupon = "No";
   const total = subTotal + shippingFee;

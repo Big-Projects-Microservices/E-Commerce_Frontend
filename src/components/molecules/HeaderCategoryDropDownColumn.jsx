@@ -8,8 +8,6 @@ export default function HeaderCategoryDropDownColumn({ title, categories }) {
         variant="h6"
         sx={{
           fontWeight: 600,
-          mb: 1.5,
-          color: "text.primary",
           textTransform: "uppercase",
           fontSize: "1rem",
         }}
@@ -20,8 +18,9 @@ export default function HeaderCategoryDropDownColumn({ title, categories }) {
         {categories.map((item, index) => (
           <HeaderDropDownLink
             key={index}
-            name={item}
-            isHot={item === "HOT DEAL"}
+            name={item.label}
+            href={item.href}
+            isHot={item.label === "HOT DEAL"}
           />
         ))}
       </Box>

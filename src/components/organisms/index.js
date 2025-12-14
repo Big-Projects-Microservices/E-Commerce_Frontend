@@ -7,3 +7,6 @@ export { default as BottomBar } from "./BottomBar";
 export { default as MainFooterContent } from "./MainFooterContent";
 export { default as HeaderCategoryGridDropDownColumn } from "./HeaderCategoryGridDropDownColumn";
 export { default as Slider } from "./Slider";
+export { default as ProductListGrid } from "./ProductListGrid";
+export { default as ProductSidebar } from "./ProductSidebar";
+export { default as FilterBar } from "./FilterBar";

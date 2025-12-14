@@ -2,7 +2,7 @@ import { useSetRecoilState } from "recoil";
 import { shoppingCart } from "@recoil/atoms/shoppingCart";
 import { Button, PriceText, ProductName, StarRaitung } from "@atoms";
 
-export default function ProductCard({ product, isHot = false }) {
+export default function ProductCard({ product, isHot = true }) {
   const setCart = useSetRecoilState(shoppingCart);
 
   const handleAddToCart = () => {

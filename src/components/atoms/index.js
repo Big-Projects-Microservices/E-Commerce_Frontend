@@ -16,3 +16,4 @@ export { default as Button } from "./Button";
 export { default as PaymentIcons } from "./PaymentIncons";
 export { default as BannerImage } from "./BannerImage";
 export { default as HeaderDropDownLink } from "./HeaderDropDownLink";
+export { default as ErrorTitle } from "./ErrorTitle";
