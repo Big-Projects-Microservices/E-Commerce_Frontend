@@ -1,4 +1,4 @@
-import  {graphqlClient}  from "./graphqlClient";
+import { graphqlClient } from "./graphqlClient";
 
 export const getAllProducts = async () => {
   const query = `

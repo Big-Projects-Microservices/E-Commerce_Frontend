@@ -99,7 +99,6 @@ export default function HotDeal() {
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Box sx={{ display: "flex", minHeight: "80vh", gap: 4 }}>
         <ProductSidebar onFilterChange={handleFilterChange} />
-
         <ProductListGrid
           products={finalProductsToDisplay}
           totalItems={finalProductsToDisplay.length}

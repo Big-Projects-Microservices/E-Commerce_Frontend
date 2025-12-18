@@ -1,4 +1,6 @@
 export { default as ShoppingCart } from "./ShoppingCart";
+export { default as Slider } from "./Slider";
+export { default as SearchBar } from "./SearchBar";
 export { default as InfoFeatures } from "./InfoFeatures";
 export { default as ProductGrid } from "./ProductGrid";
 export { default as BestSellers } from "./BestSellers";
@@ -6,7 +8,7 @@ export { default as BestSellerBlock } from "./BestSellerBlock";
 export { default as BottomBar } from "./BottomBar";
 export { default as MainFooterContent } from "./MainFooterContent";
 export { default as HeaderCategoryGridDropDownColumn } from "./HeaderCategoryGridDropDownColumn";
-export { default as Slider } from "./Slider";
 export { default as ProductListGrid } from "./ProductListGrid";
 export { default as ProductSidebar } from "./ProductSidebar";
 export { default as FilterBar } from "./FilterBar";
+export { default as ActionBanner } from "./ActionBanner";

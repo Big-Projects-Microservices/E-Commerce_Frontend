@@ -1,9 +1,14 @@
-import { Link } from "react-router-dom";
-import { ShoppingCart, Icon } from "../atoms";
+import { Link, useLocation } from "react-router-dom";
+import { ShoppingCart, Icon } from "@atoms";
 import iconUser from "../../assets/header/my-profile.svg";
 import searcher from "../../assets/header/search-icon.svg";
 
 export default function LeftSideHeader() {
+  const location = useLocation();
+  if (location.pathname === "/500") {
+    return null;
+  }
+
   const menuList = [
     { id: 1, name: "Home", path: "/" },
     { id: 2, name: "Bags", path: "/bags" },

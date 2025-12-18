@@ -11,10 +11,7 @@ export default function BreadCrumbs({ items }) {
     >
       {items.map((item, index) =>
         index === items.length - 1 ? (
-          <Typography
-            key={item.name}
-            sx={{ color: "text.secondary", fontSize: 14 }}
-          >
+          <Typography key={item.name} sx={{ fontSize: 14 }} color="lightblue">
             {item.name}
           </Typography>
         ) : (
@@ -22,7 +19,8 @@ export default function BreadCrumbs({ items }) {
             key={item.name}
             href={item.path}
             underline="hover"
-            sx={{ color: "primary.main", fontSize: 14 }}
+            sx={{ fontSize: 14 }}
+            color="black"
           >
             {item.name}
           </Link>

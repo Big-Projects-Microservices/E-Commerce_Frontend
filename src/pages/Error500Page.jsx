@@ -16,8 +16,6 @@ export default function Error500Page() {
         code="500"
         title="Server Error"
         message="The server encountered an internal error or the protocol version is not supported. We are currently working on fixing this issue. Please try again later."
-        actionText="Try again now"
-        actionTo={window.location.pathname}
       />
     </Container>
   );

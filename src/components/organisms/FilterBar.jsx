@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Box, Typography, Divider } from "@mui/material";
 import { SortOption, ViewSwitcher } from "@molecules";
+import { ActionBanner } from "@organisms";
 
 const sortByOptions = [
   { id: 1, label: "Name", value: "name" },
@@ -29,36 +30,39 @@ export default function FilterBar({ totalItems, onSortChange, onShowChange }) {
     onShowChange?.(value);
   };
   return (
-    <Box
-      sx={{
-        mb: 3,
-        p: 2,
-        bgcolor: "background.paper",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        border: "1px solid #ddd",
-        borderRadius: 1,
-      }}
-    >
-      <Typography fontWeight="bold">{totalItems} Items</Typography>
-      <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
-        <SortOption
-          label="Sort By"
-          value={sortBy}
-          options={sortByOptions}
-          onChange={handleSortChange}
-        />
+    <>
+      <ActionBanner />
+      <Box
+        sx={{
+          mb: 3,
+          p: 2,
+          bgcolor: "background.paper",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          border: "1px solid #ddd",
+          borderRadius: 1,
+        }}
+      >
+        <Typography fontWeight="bold">{totalItems} Items</Typography>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
+          <SortOption
+            label="Sort By"
+            value={sortBy}
+            options={sortByOptions}
+            onChange={handleSortChange}
+          />
 
-        <SortOption
-          label="Show"
-          value={showCount}
-          options={showOptions}
-          onChange={handleShowChange}
-        />
-        <Divider orientation="vertical" flexItem />
-        <ViewSwitcher currentView={view} onViewChange={setView} />
+          <SortOption
+            label="Show"
+            value={showCount}
+            options={showOptions}
+            onChange={handleShowChange}
+          />
+          <Divider orientation="vertical" flexItem />
+          <ViewSwitcher currentView={view} onViewChange={setView} />
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 }

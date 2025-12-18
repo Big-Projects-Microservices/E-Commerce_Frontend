@@ -1,13 +1,7 @@
 import { Box, Typography } from "@mui/material";
-import { Icon, ErrorTitle, Link } from "@atoms";
+import { Icon, ErrorTitle } from "@atoms";
 
-export default function ErrorBlock({
-  code,
-  title,
-  message,
-  actionText,
-  actionTo,
-}) {
+export default function ErrorBlock({ code, title, message }) {
   return (
     <Box
       sx={{
@@ -17,9 +11,8 @@ export default function ErrorBlock({
         mx: "auto",
       }}
     >
-      <Icon type={code === "404" ? "404" : "505"} size={120} />
+      <Icon type={code === "404" ? "404" : "500"} size={120} />
       <ErrorTitle code={code} />
-
       <Typography
         variant="h4"
         gutterBottom
@@ -31,8 +24,6 @@ export default function ErrorBlock({
       <Typography variant="body1" color="text.secondary">
         {message}
       </Typography>
-
-      <Link text={actionText} to={actionTo} />
     </Box>
   );
 }

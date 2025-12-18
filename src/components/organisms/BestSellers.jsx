@@ -4,7 +4,7 @@ import ProductGrid from "./ProductGrid";
 import { SkeletonLoader } from "@molecules";
 
 export default function BestSellers({
-  products,
+  products = [],
   activeTab,
   categories,
   setActiveTab,
@@ -20,19 +20,20 @@ export default function BestSellers({
     return product.category === activeTab;
   });
 
+  if (!products.length) {
+    return <SkeletonLoader />;
+  }
   return (
     <div className="max-w-screen-xl mx-auto py-12 px-5 sm:px-10">
-      {products.length != 0 ? (
-        <>
-          <SectionTitle>best seller</SectionTitle>
-          <div className="justify-center flex gap-4">
-            {uniqueCategories.map((category) => {
-              const isActive = category === activeTab;
-              return (
-                <h3
-                  key={category}
-                  onClick={() => setActiveTab(category)}
-                  className={`
+      <SectionTitle>best seller</SectionTitle>
+      <div className="justify-center flex gap-4">
+        {uniqueCategories.map((category) => {
+          const isActive = category === activeTab;
+          return (
+            <h3
+              key={category}
+              onClick={() => setActiveTab(category)}
+              className={`
                 text-xl font-semibold transition duration-500 cursor-pointer
                 ${
                   isActive
@@ -40,23 +41,19 @@ export default function BestSellers({
                     : "text-gray-500 hover:text-blue-600"
                 }
               `}
-                >
-                  {category}
-                </h3>
-              );
-            })}
-          </div>
+            >
+              {category}
+            </h3>
+          );
+        })}
+      </div>
 
-          <TabBar
-            categories={categories}
-            activeCategory={activeTab}
-            onCategoryChange={setActiveTab}
-          />
-          <ProductGrid products={filteredProducts} />
-        </>
-      ) : (
-        <SkeletonLoader />
-      )}
+      <TabBar
+        categories={categories}
+        activeCategory={activeTab}
+        onCategoryChange={setActiveTab}
+      />
+      <ProductGrid products={filteredProducts} />
     </div>
   );
 }

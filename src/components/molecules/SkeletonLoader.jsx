@@ -11,7 +11,7 @@ export default function SkeletonLoader() {
       <Stack spacing={2}>
         <Skeleton variant="rectangular" height={40} />
         {Array.from({ length: 3 }).map((_, index) => (
-          <>
+          <div key={index}>
             <Skeleton
               key={index}
               variant="rectangular"
@@ -20,7 +20,7 @@ export default function SkeletonLoader() {
               width="80%"
             />
             <Skeleton height={36} width="50%" animation="wave" />
-          </>
+          </div>
         ))}
       </Stack>
     </div>

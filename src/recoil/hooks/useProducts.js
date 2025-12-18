@@ -4,7 +4,7 @@ import { getAllProducts } from "@services/productsServices";
 export function useProducts() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [error, setError] = useState(null);
   useEffect(() => {
     let isMounted = true;
 
@@ -37,5 +37,6 @@ export function useProducts() {
   return {
     products,
     loading,
+    error,
   };
 }
