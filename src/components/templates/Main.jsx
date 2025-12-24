@@ -4,6 +4,7 @@ import Checkout from "@pages/Checkout";
 import HotDeal from "@pages/HotDeal";
 import Error404Page from "@pages/Error404Page";
 import Error500Page from "@pages/Error500Page";
+import ProductPage from "@pages/ProductPage";
 export default function Main() {
   return (
     <main>
@@ -12,6 +13,7 @@ export default function Main() {
         <Route path="/cart" element={<Checkout />} />
         <Route path="/hot-deal" element={<HotDeal />} />
         <Route path="/500" element={<Error500Page />} />
+        <Route path="/product/:id" element={<ProductPage />} />
         <Route path="*" element={<Error404Page />} />
       </Routes>
     </main>

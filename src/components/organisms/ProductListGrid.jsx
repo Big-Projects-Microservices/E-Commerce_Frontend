@@ -1,66 +1,70 @@
 import { Box, Grid, Pagination } from "@mui/material";
 import { BreadCrumbs, ProductCard } from "@molecules";
-import { Paragraph } from "@atoms";
 import FilterBar from "./FilterBar";
-import { useState } from "react";
+import { useProductList } from "../../hooks/useProductList";
 
 const breadcrumbItems = [
   { name: "Home", path: "/" },
   { name: "Hot Deal", path: "/hot-deal" },
 ];
+
 export default function ProductListGrid({
   products = [],
   totalItems,
   onSortChange,
   onShowChange,
 }) {
-  const [page, setPage] = useState(1);
-  const itemsPerPage = 4;
-  const startIndex = (page - 1) * itemsPerPage;
-  const paginatedProducts = products.slice(
-    startIndex,
-    startIndex + itemsPerPage,
-  );
+  const { page, countPages, paginatedProducts, handlePageChange } =
+    useProductList(products, 9);
 
   return (
     <Box sx={{ flexGrow: 1, pt: 1 }}>
       <BreadCrumbs items={breadcrumbItems} />
+
       <FilterBar
-        totalItems={totalItems}
+        totalItems={totalItems || products.length}
         onSortChange={onSortChange}
         onShowChange={onShowChange}
       />
 
       <Grid
-        sx={{ display: "flex", justifyContent: "center" }}
         container
         spacing={4}
+        sx={{ display: "flex", justifyContent: "flex-start" }}
       >
-        {paginatedProducts.length ? (
+        {paginatedProducts.length > 0 ? (
           paginatedProducts.map((product) => (
             <Grid item xs={12} sm={6} md={4} key={product.id}>
               <ProductCard product={product} />
             </Grid>
           ))
         ) : (
-          <Paragraph
-            className="min-h-[100vh] overflow-auto text-[clamp(1rem,2.5vw,1.5rem)]"
-            text="No filter matches"
-          />
+          <Box
+            sx={{
+              width: "100%",
+              minHeight: "50vh",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <p className="text-xl text-gray-500">No filter matches</p>
+          </Box>
         )}
       </Grid>
 
-      <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
-        <Pagination
-          count={itemsPerPage}
-          defaultPage={1}
-          color="primary"
-          shape="rounded"
-          products={products}
-          page={page}
-          onChange={(_, value) => setPage(value)}
-        />
-      </Box>
+      {countPages > 1 && (
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 8, mb: 4 }}>
+          <Pagination
+            count={countPages}
+            page={page}
+            onChange={handlePageChange}
+            color="primary"
+            shape="rounded"
+            size="large"
+          />
+        </Box>
+      )}
     </Box>
   );
 }

@@ -12,3 +12,5 @@ export { default as ProductListGrid } from "./ProductListGrid";
 export { default as ProductSidebar } from "./ProductSidebar";
 export { default as FilterBar } from "./FilterBar";
 export { default as ActionBanner } from "./ActionBanner";
+export { default as ProductInfoSection } from "./ProductInfoSection";
+export { default as ProductTabs } from "./ProductTabs";

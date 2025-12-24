@@ -1,5 +1,5 @@
 import { Box, Button, Slider } from "@mui/material";
-import { FilterSection, BrandLink } from "@molecules";
+import { FilterSection, BrandLink, ColorPicker } from "@molecules";
 import { Paragraph } from "@atoms";
 import { useState, useEffect } from "react";
 
@@ -24,36 +24,6 @@ const colors = [
   { value: "#FF00FF", isSelected: false },
   { value: "#F5E6E6", isSelected: false },
 ];
-
-const ColorPicker = ({ colors, selectedColor, onSelectColor }) => (
-  <Box sx={{ display: "flex", gap: 1, p: 1 }}>
-    {colors.map((color, index) => {
-      const isSelected = color.value === selectedColor;
-      return (
-        <Box
-          key={index}
-          onClick={() => onSelectColor(color.value)}
-          sx={{
-            width: 24,
-            height: 24,
-            borderRadius: "50%",
-            backgroundColor: color.value,
-            border: isSelected ? "2px solid" : "none",
-            borderColor: isSelected ? "primary.main" : "transparent",
-            boxShadow: isSelected
-              ? `0 0 0 2px ${color.value === "#000000" || color.value === "#FFFF00" ? "grey.300" : "background.paper"}`
-              : "none",
-            cursor: "pointer",
-            transition: "transform 0.1s",
-            "&:hover": {
-              transform: "scale(1.1)",
-            },
-          }}
-        />
-      );
-    })}
-  </Box>
-);
 
 export default function ProductSidebar({ onFilterChange = () => {} }) {
   const [priceRange, setPriceRange] = useState([0, 300]);

@@ -22,3 +22,7 @@ export { default as SortOption } from "./SortOption";
 export { default as ViewSwitcher } from "./ViewSwitcher";
 export { default as SkeletonLoader } from "./SkeletonLoader";
 export { default as ErrorBlock } from "./ErrorBlock";
+export { default as ProductActions } from "./ProductActions";
+export { default as ColorPicker } from "./ColorPicker";
+export { default as ProductGallery } from "./ProductGallery";
+export { default as SidebarBestSeller } from "./SidebarBestSeller";
