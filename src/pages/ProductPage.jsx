@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"; 
-import { getAllProducts } from "@services/productsServices"; 
+import { useParams } from "react-router-dom";
+import { getAllProducts } from "@services/productsServices";
 import { ProductTabs, ProductGrid, ProductInfoSection } from "@organisms";
-import { SidebarBestSeller } from "@molecules";
+import { SidebarBestSeller, BreadCrumbs } from "@molecules"; 
 import { SectionTitle } from "@atoms";
 
 export default function ProductPage() {
@@ -32,9 +32,20 @@ export default function ProductPage() {
     return <div className="text-center py-20">Product not found 😞</div>;
   }
 
+  const breadcrumbItems = [
+    { name: "Home", path: "/" },
+       { name: "Hot Deal", path: "/hot-deal" },
+    { name: product.name || product.title, path: null },
+  ];
+
   return (
     <div className="bg-white min-h-screen pb-20">
       <div className="max-w-screen-xl mx-auto px-5 sm:px-10 py-10">
+        
+        <div className="mb-6">
+           <BreadCrumbs items={breadcrumbItems} />
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-3">
             <ProductInfoSection product={product} />
@@ -51,7 +62,7 @@ export default function ProductPage() {
 
         <div className="mt-24">
           <div className="text-center mb-8">
-            <SectionTitle>RELATED PRODUCTS</SectionTitle>
+            <SectionTitle>related products</SectionTitle>
           </div>
           <ProductGrid products={relatedProducts} />
         </div>

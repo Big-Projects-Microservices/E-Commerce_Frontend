@@ -1,5 +1,5 @@
 import { Banners, LatestNews } from "@molecules";
-import { Slider, SearchBar, BestSellerBlock, ActionBanner } from "@organisms";
+import { Slider, SearchBar, BestSellerBlock, ActionBanner, InfoFeatures } from "@organisms";
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
       <Slider />
       <BestSellerBlock />
       <ActionBanner />
-      {/* <InfoFeatues /> */}
+      <InfoFeatures />
       <LatestNews />
       <SearchBar />
     </>
