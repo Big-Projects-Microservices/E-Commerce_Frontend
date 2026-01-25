@@ -1,25 +1,20 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { ColorPicker } from "@molecules";
 import { useCart } from "../../hooks/useCart";
 
-const DEFAULT_COLORS = [{value: "#000000"}];
+const DEFAULT_COLORS = [{value:"#ff00ffff"}];
 const DEFAULT_SIZES = ["One Size"];
 
 export default function ProductActions({ product }) {
   const { addToCart } = useCart();
 
-  let finalColors = DEFAULT_COLORS;
-
-  if (product && product.color) {
-    if (Array.isArray(product.color)) {
-      finalColors = product.color.map((c) =>
-        typeof c === "string" ? { value: c } : c,
-      );
-    } else if (typeof product.color === "string") {
-      finalColors = [{ value: product.color }];
-    }
-  }
-
+const finalColors = useMemo(() => {
+    if (!product?.colors) return DEFAULT_COLORS;
+    console.log(product)
+    const colors = Array.isArray(product.colors) ? product.colors : [product.colors];
+    return colors.map(c => ({ value: (typeof c === "string" ? c : c.value).toLowerCase() }));
+  }, [product]);
+console.log("COLOR", product.colors)
   let finalSizes = DEFAULT_SIZES;
 
   if (product && product.size) {
@@ -49,8 +44,8 @@ export default function ProductActions({ product }) {
     return null;
   }
 
-  const availabilityText = product.availability || "Not in Stock";
-  const isInStock = availabilityText.toLowerCase().includes("in stock");
+  const availabilityText = product.availability;
+  const isInStock = availabilityText.includes("In Stock");
 
   return (
     <div className="space-y-6 mt-6">
@@ -135,7 +130,7 @@ export default function ProductActions({ product }) {
         </button>
 
         <button className="p-3 bg-blue-50 text-blue-600 border border-blue-100 rounded-lg hover:bg-blue-100">
-          ❤
+          &#128077;
         </button>
       </div>
 

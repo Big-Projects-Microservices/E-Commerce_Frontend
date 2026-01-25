@@ -17,7 +17,7 @@ export function useCart() {
 
     setCart((prevCart) => {
       const existingItemIndex = prevCart.findIndex(
-        (item) => item.id === itemToAdd.id
+        (item) => item.id === itemToAdd.id,
       );
 
       if (existingItemIndex > -1) {

@@ -1,7 +1,7 @@
 import { Box, Button, Slider } from "@mui/material";
 import { FilterSection, BrandLink, ColorPicker } from "@molecules";
 import { Paragraph } from "@atoms";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const hotDealFilters = [
   { name: "Nike", count: 2, isActive: false },
@@ -17,25 +17,26 @@ const brandFilters = [
 ];
 
 const colors = [
-  { value: "#007FFF", isSelected: false },
-  { value: "#FF4500", isSelected: false },
-  { value: "#000000", isSelected: false },
-  { value: "#FFFF00", isSelected: false },
-  { value: "#FF00FF", isSelected: false },
-  { value: "#F5E6E6", isSelected: false },
+  { value: "#007fffff", isSelected: false },
+  { value: "#ff4500ff", isSelected: false },
+  { value: "#000000ff", isSelected: false },
+  { value: "#ffff00ff", isSelected: false },
+  { value: "#ff00ffff", isSelected: false },
+  { value: "#f5e6e6ff", isSelected: false },
 ];
 
 export default function ProductSidebar({ onFilterChange = () => {} }) {
   const [priceRange, setPriceRange] = useState([0, 300]);
   const [selectedColor, setSelectedColor] = useState(null);
   const [activeBrands, setActiveBrands] = useState([]);
-
+  const onFilterChangeRef = useRef(onFilterChange);
   const handlePriceChange = (event, newValue) => {
     setPriceRange(newValue);
   };
 
   const handleColorSelect = (colorValue) => {
-    setSelectedColor((prev) => (prev === colorValue ? null : colorValue));
+    const normalizedColor = colorValue.toLowerCase()
+    setSelectedColor((prev) => (prev === normalizedColor ? null : normalizedColor));
   };
 
   const handleBrandToggle = (brandName) => {
@@ -46,13 +47,13 @@ export default function ProductSidebar({ onFilterChange = () => {} }) {
     );
   };
 
-  useEffect(() => {
-    onFilterChange({
-      priceRange: priceRange,
+useEffect(() => {
+    onFilterChangeRef.current({
+      priceRange,
       color: selectedColor,
       brands: activeBrands,
     });
-  }, [priceRange, selectedColor, activeBrands, onFilterChange]);
+  }, [priceRange, selectedColor, activeBrands]);
 
   const minPrice = 0;
   const maxPrice = 400;

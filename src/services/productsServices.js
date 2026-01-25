@@ -8,12 +8,14 @@ export const getAllProducts = async () => {
         name
         image
         additional_image
+        colors
         price
         discount_price
         category
         description
         availability
         size
+        locale
       }
     }
   `;

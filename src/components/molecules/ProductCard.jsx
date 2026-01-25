@@ -13,7 +13,7 @@ export default function ProductCard({ product, isHot = true }) {
   };
 
   return (
-           <Link
+    <Link
       to={`/product/${product.id}`}
       style={{ textDecoration: "none", color: "inherit" }}
     >
@@ -27,7 +27,6 @@ export default function ProductCard({ product, isHot = true }) {
           hover:rotate-[0.5deg]
         "
       >
- 
         {isHot && (
           <span className="absolute top-0 left-0 bg-red-100 text-red-600 py-1.5 text-xs font-bold rounded-tl-md rounded-br-md z-10 w-[64px] h-[33px]">
             HOT
@@ -35,9 +34,9 @@ export default function ProductCard({ product, isHot = true }) {
         )}
 
         <div className="w-full h-[200px] bg-gray-50 flex items-center justify-center p-4 relative">
-          {product.imageUrl ? (
+          {product.image ? (
             <img
-              src={product.imageUrl}
+              src={product.image}
               alt={product.name}
               className="
                 w-full max-h-full object-contain

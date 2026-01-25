@@ -1,5 +1,11 @@
 import { Banners, LatestNews } from "@molecules";
-import { Slider, SearchBar, BestSellerBlock, ActionBanner, InfoFeatures } from "@organisms";
+import {
+  Slider,
+  SearchBar,
+  BestSellerBlock,
+  ActionBanner,
+  InfoFeatures,
+} from "@organisms";
 
 export default function Home() {
   return (
