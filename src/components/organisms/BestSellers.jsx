@@ -2,6 +2,7 @@ import { SectionTitle } from "@atoms";
 import { TabBar } from "@molecules";
 import ProductGrid from "./ProductGrid";
 import { SkeletonLoader } from "@molecules";
+import { useTranslation } from 'react-i18next';
 
 export default function BestSellers({
   products = [],
@@ -9,10 +10,13 @@ export default function BestSellers({
   categories,
   setActiveTab,
 }) {
+  const { t } = useTranslation();
+
   let uniqueCategories = [
     ...new Set(products.map((product) => product.category)),
   ];
   uniqueCategories.unshift("All");
+
   const filteredProducts = products.filter((product) => {
     if (activeTab === "All") {
       return true;
@@ -23,9 +27,10 @@ export default function BestSellers({
   if (!products.length) {
     return <SkeletonLoader />;
   }
+
   return (
     <div className="max-w-screen-xl mx-auto py-12 px-5 sm:px-10">
-      <SectionTitle>best seller</SectionTitle>
+      <SectionTitle>{t('titles.bestSeller')}</SectionTitle>
       <div className="justify-center flex gap-4">
         {uniqueCategories.map((category) => {
           const isActive = category === activeTab;
@@ -42,7 +47,7 @@ export default function BestSellers({
                 }
               `}
             >
-              {category}
+              {category === "All" ? t('nav.items') : category}
             </h3>
           );
         })}

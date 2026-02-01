@@ -1,9 +1,9 @@
 import { graphqlClient } from "./graphqlClient";
 
-export const getAllProducts = async () => {
+export const getAllProducts = async (lang = "en") => {
   const query = `
-    query {
-      products {
+    query GetProducts($lang: String!) {
+      products(where: { locale: { _eq: $lang } }) {
         id
         name
         image
@@ -19,7 +19,7 @@ export const getAllProducts = async () => {
       }
     }
   `;
-
-  const data = await graphqlClient(query);
+  const variables = { lang };
+  const data = await graphqlClient(query, variables);
   return data.products;
 };

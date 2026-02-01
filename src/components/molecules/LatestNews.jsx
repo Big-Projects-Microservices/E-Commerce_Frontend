@@ -1,6 +1,7 @@
 import { Card, CardMedia } from "@mui/material";
 import { SectionTitle } from "@atoms";
 import { SkeletonLoader } from "@molecules";
+import { useTranslation } from 'react-i18next';
 
 const mockNews = [
   {
@@ -37,11 +38,12 @@ const mockNews = [
   },
 ];
 export default function LatestNews() {
+  const {t} = useTranslation()
   return (
     <section className="mt-6 ">
       {mockNews.length != 0 ? (
         <>
-          <SectionTitle>latest news</SectionTitle>
+         <SectionTitle>{t('titles.latestNews')}</SectionTitle>
           <ul className="flex flex-wrap justify-center gap-2">
             {mockNews.map((news, index) => (
               <Card

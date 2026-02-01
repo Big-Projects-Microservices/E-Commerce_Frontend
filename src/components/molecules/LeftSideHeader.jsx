@@ -1,43 +1,44 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { ShoppingCart, Icon } from "@atoms";
 import iconUser from "../../assets/header/my-profile.svg";
 import searcher from "../../assets/header/search-icon.svg";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
+
 export default function LeftSideHeader() {
   const location = useLocation();
-  const { translation } = useTranslation();
+  const { lang } = useParams();
+  const { t } = useTranslation();
+
   if (location.pathname === "/500") {
     return null;
   }
 
   const menuList = [
-    { id: 1, name: "Home", path: "/" },
-    { id: 2, name: "Bags", path: "/bags" },
-    { id: 3, name: "Sneakers", path: "/sneakers" },
-    { id: 4, name: "Belt", path: "/belt" },
-    { id: 5, name: "Contact", path: "/contact" },
+    { id: 1, name: t('nav.home'), path: `/${lang}` },
+    { id: 2, name: t('nav.bags'), path: `/${lang}/bags` },
+    { id: 3, name: t('nav.sneakers'), path: `/${lang}/sneakers` },
+    { id: 4, name: t('nav.belt'), path: `/${lang}/belt` },
+    { id: 5, name: t('nav.contact'), path: `/${lang}/contact` },
   ];
 
   const navList = [
     {
       id: 1,
       name: (
-        <Trans i18nKey="description.part1">
-          <Icon text="My profile" src={iconUser} />
-        </Trans>
+        <Icon text={t('nav.profile')} src={iconUser} />
       ),
     },
     {
       id: 2,
       name: (
-        <Link to="/cart">
+        <Link to={`/cart`}>
           <ShoppingCart />
         </Link>
       ),
     },
-    { id: 3, name: translation },
+    { id: 3, name: t('common.itemsCount') },
     { id: 4, name: "$0.00" },
-    { id: 5, name: <Icon src={searcher} alt="search" /> },
+    { id: 5, name: <Icon src={searcher} alt={t('titles.search')} /> },
   ];
 
   return (

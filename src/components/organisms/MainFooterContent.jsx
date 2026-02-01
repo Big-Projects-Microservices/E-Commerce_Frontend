@@ -1,6 +1,10 @@
 import { ContactBlock, LogoBlock, NavList, SocialBlock } from "@molecules";
 import { navigationLinks, contactLines } from "../../data/footerData";
+import { useTranslation } from 'react-i18next';
+
 export default function MainFooterContent() {
+  const { t } = useTranslation();
+
   return (
     <div className="grid grid-cols-2 md:grid-cols-5 gap-y-10 md:gap-x-8 lg:gap-x-10">
       <div className="col-span-2 md:col-span-1">
@@ -9,24 +13,24 @@ export default function MainFooterContent() {
 
       <div className="col-span-2 md:col-span-1">
         <SocialBlock
-          title="Follow us"
-          text="Since the 1500s, when an unknown printer took a galley of type and scrambled."
+          title={t('footer.followUs')}
+          text={t('footer.aboutText')}
         />
 
         <div className="mt-8">
-          <ContactBlock title="Contact Us" lines={contactLines} />
+          <ContactBlock title={t('nav.contact')} lines={contactLines} />
         </div>
       </div>
 
-      <NavList title="Information" links={navigationLinks} />
+      <NavList title={t('footer.information')} links={navigationLinks} />
 
       <div className="flex flex-col">
-        <NavList title="Service" links={navigationLinks} />
-        <NavList title="My Account" links={navigationLinks} className="!mb-0" />
+        <NavList title={t('footer.service')} links={navigationLinks} />
+        <NavList title={t('footer.myAccount')} links={navigationLinks} className="!mb-0" />
       </div>
 
       <NavList
-        title="Our Offers"
+        title={t('footer.ourOffers')}
         links={navigationLinks}
         className="md:col-span-1 col-span-2"
       />

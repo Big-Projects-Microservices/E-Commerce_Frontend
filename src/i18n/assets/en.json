@@ -1,21 +1,54 @@
 {
   "nav": {
-    "items": "Products",
-    "profile": "My Profile",
-    "home": "Home Page",
-    "bags": "Bags",
-    "sneakers": "Sneakers",
-    "belt": "Belts",
-    "contact": "Contact"
+    "items": "products",
+    "profile": "My profile",
+    "home": "home",
+    "bags": "bags",
+    "sneakers": "sneakers",
+    "belt": "belts",
+    "contact": "contact",
+    "hotDeal": "hot deal"
   },
   "common": {
-    "loading": "Loading...",
-    "buttonAddTo": "Add to Cart",
-    "buttonShopNow": "Buy Now"
+    "loading": "loading...",
+    "notFound": "Product not found",
+    "buttonAddTo": "Add to cart",
+    "buttonShopNow": "Shop now",
+    "itemsCount": "items",
+    "searchPlaceholder": "Search query..."
   },
   "titles": {
-    "bestSeller": "Best Seller",
-    "latestNews": "Latest News",
-    "Search": "Search"
+    "bestSeller": "Best seller",
+    "latestNews": "Latest news",
+    "search": "Search",
+    "relatedProducts": "related products",
+    "cart": "cart"
+  },
+  "featuresCards": {
+    "freeShipping": {
+      "title": "Free shipping",
+      "text": "suffered alteration in some form"
+    },
+    "refund": {
+      "title": "100% refund",
+      "text": "get a full refund with no hassle"
+    },
+    "support": {
+      "title": "Support 24/7",
+      "text": "we're here for you anytime"
+    }
+  },
+    "product": {
+    "heroTitle": "Adidas men running sneakers",
+    "heroSubtitle": "Performance and design. Taken right to the edge",
+    "all":"all"
+  },
+  "footer": {
+    "aboutText": "since the 1500s, when an unknown printer took a galley of type and scrambled.",
+    "followUs": "follow us",
+    "information": "information",
+    "service": "service",
+    "myAccount": "my account",
+    "ourOffers": "our offers"
   }
 }
