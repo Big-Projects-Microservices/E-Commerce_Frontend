@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ShoppingCart, Icon } from "@atoms";
 import iconUser from "../../assets/header/my-profile.svg";
 import searcher from "../../assets/header/search-icon.svg";
-import {Trans, useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from "react-i18next";
 export default function LeftSideHeader() {
   const location = useLocation();
   const { translation } = useTranslation();
@@ -19,7 +19,14 @@ export default function LeftSideHeader() {
   ];
 
   const navList = [
-    { id: 1, name:   <Trans i18nKey="description.part1"><Icon text="My profile" src={iconUser} /></Trans>  },
+    {
+      id: 1,
+      name: (
+        <Trans i18nKey="description.part1">
+          <Icon text="My profile" src={iconUser} />
+        </Trans>
+      ),
+    },
     {
       id: 2,
       name: (
@@ -28,7 +35,7 @@ export default function LeftSideHeader() {
         </Link>
       ),
     },
-    { id: 3, name: translation('') },
+    { id: 3, name: translation },
     { id: 4, name: "$0.00" },
     { id: 5, name: <Icon src={searcher} alt="search" /> },
   ];

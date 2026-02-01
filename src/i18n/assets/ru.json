@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "items": "Товары",
+    "profile": "Мой профиль",
+    "home": "Главная страница",
+    "bags": "сумки",
+    "sneakers": "кроссовки",
+    "belt": "ремни",
+    "contact": "контакт"
+  },
+  "common": {
+    "loading": "Загрузка...",
+    "buttonAddTo": "Добавить в корзину",
+    "buttonShopNow": "Купить сейчас"
+  },
+  "titles": {
+    "bestSeller": "Бест селлер",
+    "latestNews": "Последние новости",
+    "Search": "Искать"
+  }
+}

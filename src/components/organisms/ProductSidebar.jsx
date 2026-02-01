@@ -35,8 +35,10 @@ export default function ProductSidebar({ onFilterChange = () => {} }) {
   };
 
   const handleColorSelect = (colorValue) => {
-    const normalizedColor = colorValue.toLowerCase()
-    setSelectedColor((prev) => (prev === normalizedColor ? null : normalizedColor));
+    const normalizedColor = colorValue.toLowerCase();
+    setSelectedColor((prev) =>
+      prev === normalizedColor ? null : normalizedColor,
+    );
   };
 
   const handleBrandToggle = (brandName) => {
@@ -47,7 +49,7 @@ export default function ProductSidebar({ onFilterChange = () => {} }) {
     );
   };
 
-useEffect(() => {
+  useEffect(() => {
     onFilterChangeRef.current({
       priceRange,
       color: selectedColor,

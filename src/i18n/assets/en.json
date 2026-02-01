@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "items": "Products",
+    "profile": "My Profile",
+    "home": "Home Page",
+    "bags": "Bags",
+    "sneakers": "Sneakers",
+    "belt": "Belts",
+    "contact": "Contact"
+  },
+  "common": {
+    "loading": "Loading...",
+    "buttonAddTo": "Add to Cart",
+    "buttonShopNow": "Buy Now"
+  },
+  "titles": {
+    "bestSeller": "Best Seller",
+    "latestNews": "Latest News",
+    "Search": "Search"
+  }
+}

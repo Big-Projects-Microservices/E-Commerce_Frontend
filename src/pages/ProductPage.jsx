@@ -1,40 +1,54 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { getAllProducts } from "@services/productsServices";
 import { ProductTabs, ProductGrid, ProductInfoSection } from "@organisms";
 import { SidebarBestSeller, BreadCrumbs } from "@molecules";
 import { SectionTitle } from "@atoms";
 
 export default function ProductPage() {
-  const { id } = useParams();
+  const { id, lang } = useParams();
+  const { t } = useTranslation();
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
+      setLoading(true);
       try {
         const allProducts = await getAllProducts();
-        const foundProduct = allProducts.find((item) => item.id == id);
+        const foundProduct = allProducts.find(
+          (item) => String(item.id) === String(id),
+        );
 
-        setProduct(foundProduct);
-
-        const others = allProducts.filter((item) => item.id != id).slice(0, 4);
-        setRelatedProducts(others);
+        if (foundProduct) {
+          setProduct(foundProduct);
+          const others = allProducts
+            .filter((item) => String(item.id) !== String(id))
+            .slice(0, 4);
+          setRelatedProducts(others);
+        } else {
+          setProduct(null);
+        }
       } catch (error) {
-        console.error("Ошибка загрузки:", error);
+        console.error("Error loading:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     loadData();
-  }, [id]);
+  }, [id, lang]);
 
-  if (product == null) {
-    return <div className="text-center py-20">Product not found 😞</div>;
-  }
+  if (loading)
+    return <div className="text-center py-20">{t("common.loading")}...</div>;
+  if (!product)
+    return <div className="text-center py-20">{t("common.not_found")} 😞</div>;
 
   const breadcrumbItems = [
-    { name: "Home", path: "/" },
-    { name: "Hot Deal", path: "/hot-deal" },
+    { name: t("nav.home"), path: `/${lang}` },
+    { name: t("nav.hotDeal"), path: `/${lang}/hot-deal` },
     { name: product.name || product.title, path: null },
   ];
 
@@ -61,7 +75,7 @@ export default function ProductPage() {
 
         <div className="mt-24">
           <div className="text-center mb-8">
-            <SectionTitle>related products</SectionTitle>
+            <SectionTitle>{t("products.related")}</SectionTitle>
           </div>
           <ProductGrid products={relatedProducts} />
         </div>

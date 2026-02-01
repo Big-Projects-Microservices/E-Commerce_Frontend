@@ -2,19 +2,23 @@ import { useState, useEffect, useMemo } from "react";
 import { ColorPicker } from "@molecules";
 import { useCart } from "../../hooks/useCart";
 
-const DEFAULT_COLORS = [{value:"#ff00ffff"}];
+const DEFAULT_COLORS = [{ value: "#ff00ffff" }];
 const DEFAULT_SIZES = ["One Size"];
 
 export default function ProductActions({ product }) {
   const { addToCart } = useCart();
 
-const finalColors = useMemo(() => {
+  const finalColors = useMemo(() => {
     if (!product?.colors) return DEFAULT_COLORS;
-    console.log(product)
-    const colors = Array.isArray(product.colors) ? product.colors : [product.colors];
-    return colors.map(c => ({ value: (typeof c === "string" ? c : c.value).toLowerCase() }));
+    console.log(product);
+    const colors = Array.isArray(product.colors)
+      ? product.colors
+      : [product.colors];
+    return colors.map((c) => ({
+      value: (typeof c === "string" ? c : c.value).toLowerCase(),
+    }));
   }, [product]);
-console.log("COLOR", product.colors)
+  console.log("COLOR", product.colors);
   let finalSizes = DEFAULT_SIZES;
 
   if (product && product.size) {
