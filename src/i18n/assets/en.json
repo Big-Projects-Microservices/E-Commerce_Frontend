@@ -7,7 +7,9 @@
     "sneakers": "sneakers",
     "belt": "belts",
     "contact": "contact",
-    "hotDeal": "hot deal"
+    "hotDeal": "hot deal",
+    "shop": "shop",
+    "about": "about"
   },
   "common": {
     "loading": "loading...",
@@ -22,7 +24,9 @@
     "latestNews": "Latest news",
     "search": "Search",
     "relatedProducts": "related products",
-    "cart": "cart"
+    "cart": "cart",
+    "contactUs": "Contact Us",
+    "aboutUs": "About Us"
   },
   "featuresCards": {
     "freeShipping": {
@@ -38,10 +42,10 @@
       "text": "we're here for you anytime"
     }
   },
-    "product": {
+  "product": {
     "heroTitle": "Adidas men running sneakers",
     "heroSubtitle": "Performance and design. Taken right to the edge",
-    "all":"all"
+    "all": "all"
   },
   "footer": {
     "aboutText": "since the 1500s, when an unknown printer took a galley of type and scrambled.",
@@ -50,5 +54,58 @@
     "service": "service",
     "myAccount": "my account",
     "ourOffers": "our offers"
+  },
+  "contactPage": {
+    "breadcrumbHome": "Home",
+    "breadcrumbCurrent": "Contact Us",
+    "cardEyebrow": "Contact",
+    "cardTitle": "get in touch",
+    "cardDescription": "We are here to help with your orders, product questions, and any support you may need.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "addressLabel": "Address",
+    "emailValue": "support@ecommerce.com",
+    "phoneValue": "+1 (000) 123-4567",
+    "addressValue": "4517 Washington Ave. Manchester, Kentucky 39495",
+    "formEyebrow": "Message Us",
+    "formTitle": "We'd love to hear from you",
+    "formDescription": "Fill out the form below and our team will get back to you as soon as possible.",
+    "firstNameLabel": "First Name",
+    "lastNameLabel": "Last Name",
+    "emailFieldLabel": "Email",
+    "phoneFieldLabel": "Phone",
+    "messageLabel": "Message",
+    "firstNamePlaceholder": "Enter your first name",
+    "lastNamePlaceholder": "Enter your last name",
+    "emailPlaceholder": "Enter your email",
+    "phonePlaceholder": "Enter your phone number",
+    "messagePlaceholder": "Write your message",
+    "submitButton": "Send Message",
+    "searchButton": "Search"
+  },
+  "payment": {
+    "title": "Make Payment",
+    "processing": "Processing payment...",
+    "step1Button": "Go to Payment",
+    "step2Button": "Confirm",
+    "step3Button": "Complete",
+    "successTitle": "Success",
+    "successDescription": "Your payment has been confirmed successfully.",
+    "paymentMethodTitle": "Select Method Of Payment",
+    "paypal": "PayPal",
+    "bankTransfer": "Bank Transfer",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "address": "Address",
+    "orderNotes": "Order Notes",
+    "cardNumber": "Card Number",
+    "expiry": "Expiry",
+    "cvv": "CVV",
+    "addressPlaceholder": "Address Details",
+    "orderNotesPlaceholder": "Additional Details",
+    "cardNumberPlaceholder": "Card Number",
+    "expiryPlaceholder": "MM/YY",
+    "cvvPlaceholder": "CVV",
+    "cardHolder": "Card Holder"
   }
 }

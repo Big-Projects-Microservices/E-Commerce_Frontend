@@ -14,6 +14,8 @@
     "@mui/material": "^7.0.1",
     "@mui/x-data-grid": "^8.22.0",
     "@mui/x-data-grid-generator": "^8.22.0",
+    "@stripe/react-stripe-js": "^6.0.0",
+    "@stripe/stripe-js": "^9.0.0",
     "autoprefixer": "^10.4.21",
     "axios": "^1.8.4",
     "i18next": "^25.8.0",

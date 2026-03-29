@@ -1,51 +1,62 @@
+import { useMemo, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { totalPrice } from "@recoil/selectors/totalPrice";
+import PaymentModal from "./PaymentModal";
+
 export default function OrderForm() {
   const subTotal = useRecoilValue(totalPrice);
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+
   const shippingFee = 20;
   const coupon = "No";
-  const total = subTotal + shippingFee;
+  const total = useMemo(() => subTotal + shippingFee, [subTotal, shippingFee]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleCheckoutClick = () => {
+    setIsPaymentModalOpen(true);
+  };
+
+  const handleClosePaymentModal = () => {
+    setIsPaymentModalOpen(false);
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="max-w-xs mx-auto font-sans border-t border-gray-200 space-y-4 w-full"
-    >
-      <div className="flex justify-between">
-        <label htmlFor="subtotal">Subtotal</label>
-        <span id="subtotal"> ${subTotal}</span>
-        {console.log(subTotal)}
-      </div>
+    <>
+      <section className="w-full max-w-xs space-y-4 border-t border-gray-200 font-sans">
+        <div className="flex justify-between pt-4">
+          <span>Subtotal</span>
+          <span>${subTotal}</span>
+        </div>
 
-      <div className="flex justify-between">
-        <label htmlFor="shipping">Shipping fee</label>
-        <span id="shipping">${shippingFee}</span>
-      </div>
+        <div className="flex justify-between">
+          <span>Shipping fee</span>
+          <span>${shippingFee}</span>
+        </div>
 
-      <div className="flex justify-between">
-        <label htmlFor="coupon">Coupon</label>
-        <span id="coupon">{coupon}</span>
-      </div>
+        <div className="flex justify-between">
+          <span>Coupon</span>
+          <span>{coupon}</span>
+        </div>
 
-      <hr className="my-2" />
+        <hr className="my-2" />
 
-      <div className="flex justify-between items-center text-lg font-bold">
-        <label htmlFor="total" className="text-black">
-          TOTAL
-        </label>
-        <span id="total">${total}</span>
-      </div>
+        <div className="flex items-center justify-between text-lg font-bold">
+          <span className="text-black">TOTAL</span>
+          <span>${total}</span>
+        </div>
 
-      <button
-        type="submit"
-        className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition text-[20px]"
-      >
-        Check out
-      </button>
-    </form>
+        <button
+          type="button"
+          onClick={handleCheckoutClick}
+          className="w-full rounded bg-blue-500 py-2 text-[20px] text-white transition hover:bg-blue-600"
+        >
+          Check out
+        </button>
+      </section>
+
+      <PaymentModal
+        isOpen={isPaymentModalOpen}
+        onClose={handleClosePaymentModal}
+      />
+    </>
   );
 }

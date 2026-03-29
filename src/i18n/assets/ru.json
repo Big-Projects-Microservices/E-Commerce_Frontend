@@ -7,7 +7,9 @@
     "sneakers": "кроссовки",
     "belt": "ремни",
     "contact": "контакт",
-    "hotDeal": "горячие предложения"
+    "hotDeal": "горячие предложения",
+    "shop": "магазин",
+    "about": "о нас"
   },
   "common": {
     "loading": "загрузка...",
@@ -22,7 +24,9 @@
     "latestNews": "последние новости",
     "search": "искать",
     "relatedProducts": "похожие товары",
-    "cart": "корзина"
+    "cart": "корзина",
+    "contactUs": "Свяжитесь с нами",
+    "aboutUs": "О нас"
   },
   "featuresCards": {
     "freeShipping": {
@@ -41,7 +45,7 @@
   "product": {
     "heroTitle": "Мужские кроссовки adidas для бега",
     "heroSubtitle": "Производительность и дизайн. доведены до совершенства",
-    "all":"все"
+    "all": "все"
   },
   "footer": {
     "aboutText": "с 1500-х годов, когда неизвестный печатник взял набор шрифтов и перемешал их.",
@@ -50,5 +54,58 @@
     "service": "сервис",
     "myAccount": "мой аккаунт",
     "ourOffers": "наши предложения"
+  },
+  "contactPage": {
+    "breadcrumbHome": "Главная",
+    "breadcrumbCurrent": "Свяжитесь с нами",
+    "cardEyebrow": "Контакты",
+    "cardTitle": "свяжитесь с нами",
+    "cardDescription": "Мы поможем с заказами, вопросами по товарам и любой поддержкой, которая вам нужна.",
+    "emailLabel": "Email",
+    "phoneLabel": "Телефон",
+    "addressLabel": "Адрес",
+    "emailValue": "support@ecommerce.com",
+    "phoneValue": "+1 (000) 123-4567",
+    "addressValue": "4517 Washington Ave. Manchester, Kentucky 39495",
+    "formEyebrow": "Напишите нам",
+    "formTitle": "Мы будем рады вам помочь",
+    "formDescription": "Заполните форму ниже, и наша команда свяжется с вами как можно скорее.",
+    "firstNameLabel": "Имя",
+    "lastNameLabel": "Фамилия",
+    "emailFieldLabel": "Email",
+    "phoneFieldLabel": "Телефон",
+    "messageLabel": "Сообщение",
+    "firstNamePlaceholder": "Введите имя",
+    "lastNamePlaceholder": "Введите фамилию",
+    "emailPlaceholder": "Введите email",
+    "phonePlaceholder": "Введите номер телефона",
+    "messagePlaceholder": "Напишите ваше сообщение",
+    "submitButton": "Отправить сообщение",
+    "searchButton": "Искать"
+  },
+  "payment": {
+    "title": "Оплата",
+    "processing": "Обработка платежа...",
+    "step1Button": "Перейти к оплате",
+    "step2Button": "Подтвердить",
+    "step3Button": "Завершить",
+    "successTitle": "Успешно",
+    "successDescription": "Ваш платеж успешно подтвержден.",
+    "paymentMethodTitle": "Выберите способ оплаты",
+    "paypal": "PayPal",
+    "bankTransfer": "Банковский перевод",
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "address": "Адрес",
+    "orderNotes": "Комментарий к заказу",
+    "cardNumber": "Номер карты",
+    "expiry": "Срок действия",
+    "cvv": "CVV",
+    "addressPlaceholder": "Детали адреса",
+    "orderNotesPlaceholder": "Дополнительная информация",
+    "cardNumberPlaceholder": "Номер карты",
+    "expiryPlaceholder": "ММ/ГГ",
+    "cvvPlaceholder": "CVV",
+    "cardHolder": "Держатель карты"
   }
 }

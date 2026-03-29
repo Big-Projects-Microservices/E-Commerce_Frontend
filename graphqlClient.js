@@ -1,0 +1,1 @@
+export const GRAPHQL_CLIENT_AUDIT_PLACEHOLDER = true;

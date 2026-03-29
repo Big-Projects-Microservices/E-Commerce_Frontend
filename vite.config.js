@@ -15,7 +15,7 @@ export default defineConfig({
       "@molecules": path.resolve(__dirname, "src/components/molecules"),
       "@organisms": path.resolve(__dirname, "src/components/organisms"),
       "@templates": path.resolve(__dirname, "src/components/templates"),
-
+      "@hooks": path.resolve(__dirname, "src/components/hooks"),
       "@pages": path.resolve(__dirname, "src/pages"),
 
       "@recoil": path.resolve(__dirname, "src/recoil"),

@@ -1,4 +1,4 @@
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ShoppingCart, Icon } from "@atoms";
 import iconUser from "../../assets/header/my-profile.svg";
 import searcher from "../../assets/header/search-icon.svg";
@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 export default function LeftSideHeader() {
   const location = useLocation();
-  const { lang } = useParams();
+  const lang = useLocation().pathname.split('/')[1] || 'en';
   const { t } = useTranslation();
 
   if (location.pathname === "/500") {
